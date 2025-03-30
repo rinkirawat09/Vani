@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            font-family: cursive;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 80vh;
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .message, .sub-message {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            font-family: cursive;
+        }
+
+        .message {
+            top: 5%;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .sub-message {
+            bottom: 5%;
+            font-size: 1.3em;
+        }
+
+        /* 🎵 Hidden Audio Player */
+        .hidden-audio {
+            display: none; /* Hide initially */
+            width: 250px;
+            margin-top: 20px;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🎵 Background Music (Hidden Initially) -->
+    <audio id="bg-music" class="hidden-audio" preload="auto" controls loop>
+        <source src="./jaanNisaar.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <img src="./download (2).jpg" alt="Happy Anniversary">
+        <div class="message">Happy Anniversary ❤️</div>
+        <div class="sub-message">
+            I'm not perfect. I make mistakes. I have jealousy issues. And trust issues. 
+            I can be moody sometimes. But I promise you that if I say I love you, I mean it. 
+            I'm faithful, I'm loyal, and I will do everything I can to keep you. 
+            Don't confuse my caring for being controlling. Don't make me put in all the effort. 
+            Don't ignore me. Love me back like you mean it, or don't stay. 
+            Together, we are strong enough to overcome the worst of the worst; alone, we struggle to find meaning.
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var password = prompt("Enter Password:");
+            if (password === "RiVani") { 
+                document.querySelector(".container").style.display = "block";
+                document.querySelector("#bg-music").style.display = "block"; // Show audio player
+
+                // 🎵 Music Play on First Click
+                document.body.addEventListener("click", function () {
+                    var audio = document.getElementById("bg-music");
+                    audio.play();
+                }, { once: true }); // Runs only once
+            } else {
+                alert("Access Denied!");
+                window.location.href = "https://google.com"; 
+            }
+        };
+    </script>
+
+</body>
+</html>
